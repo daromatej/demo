@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Posts Browser</string>
+
+    <!--user list fragment-->
+    <string name="fragment_user_list_title">Users</string>
+
+    <!--post list fragment-->
+    <string name="fragment_post_list_title">Posts</string>
+
+    <!--comment list fragment-->
+    <string name="fragment_comment_list_title">Comments</string>
+
+    <!--error fragment-->
+    <string name="fragment_error_title">Ooops!@#</string>
+    <string name="fragment_error_message">Something went wrong.\nPlease try again in a while.</string>
+    <string name="fragment_error_retry_button_text">Retry</string>
+    <string name="fragment_error_close_button_text">Exit</string>
+
+</resources>

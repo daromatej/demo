@@ -1,0 +1,3 @@
+<resources>
+    <string name="service_url" translatable="false">https://jsonplaceholder.typicode.com</string>
+</resources>

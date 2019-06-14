@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--theme-->
+    <color name="colorPrimary">@color/blue_grey_300</color>
+    <color name="colorPrimaryDark">@color/blue_grey_500</color>
+    <color name="colorPrimaryLight">@color/blue_grey_200</color>
+    <color name="colorAccent">@color/blue_200</color>
+
+    <!--buttons-->
+    <color name="button_primary_base">@color/colorPrimary</color>
+    <color name="button_primary_pressed">@color/colorPrimaryLight</color>
+    <color name="button_primary_disabled">@color/grey_400</color>
+    <color name="button_primary_text">@color/white</color>
+
+    <color name="button_secondary_base">@color/white</color>
+    <color name="button_secondary_pressed">@color/colorPrimaryLight</color>
+    <color name="button_secondary_enabled">@color/colorPrimary</color>
+    <color name="button_secondary_disabled">@color/grey_400</color>
+    <color name="button_secondary_text">@color/colorPrimary</color>
+
+
+</resources>

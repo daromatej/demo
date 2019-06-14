@@ -1,0 +1,5 @@
+<resources>
+
+    <attr name="toolbarBackground" format="reference" />
+
+</resources>

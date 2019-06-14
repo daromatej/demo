@@ -1,0 +1,25 @@
+<resources>
+
+    <style name="TitleItem">
+        <item name="android:textAppearance">@style/TextTitle</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="FirstItem">
+        <item name="android:textAppearance">@style/TextMessage</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="EmailItem">
+        <item name="android:textAppearance">@style/TextEmail</item>
+    </style>
+
+    <style name="BodyItem">
+        <item name="android:textAppearance">@style/TextMessage</item>
+    </style>
+
+    <style name="ErrorScreenMessage">
+        <item name="android:textAppearance">@style/TextTitle</item>
+    </style>
+
+</resources>

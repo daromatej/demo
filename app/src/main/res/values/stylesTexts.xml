@@ -1,0 +1,28 @@
+<resources>
+
+    <style name="TextTitle">
+        <item name="android:textSize">@dimen/text_large</item>
+    </style>
+
+    <style name="TextMessage">
+        <item name="android:textSize">@dimen/text_normal</item>
+    </style>
+
+    <style name="TextSubMessage">
+        <item name="android:textSize">@dimen/text_small</item>
+        <item name="android:textColor">@color/blue_grey_800</item>
+    </style>
+
+    <style name="TextEmail">
+        <item name="android:textSize">@dimen/text_small</item>
+        <item name="android:textColor">@color/blue_900</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+
+    <style name="TextButton">
+        <item name="android:textSize">@dimen/text_large</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+</resources>
