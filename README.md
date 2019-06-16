@@ -1,4 +1,4 @@
-Demo app demonstrating usage of the the modern android libraries, concepts and architectures:
+Demo app demonstrating usage of the the modern android libraries, components and architectures:
 
 Libraries
 - Dagger2
@@ -11,3 +11,8 @@ Libraries
 Architectures
 - Mvvm
 - Clean architecture
+
+Components
+- RecyclerView
+- ConstraintLayout
+- Selectors

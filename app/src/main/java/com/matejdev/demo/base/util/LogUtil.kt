@@ -3,12 +3,13 @@ package com.matejdev.demo.base.util
 import com.matejdev.demo.BuildConfig
 import timber.log.Timber
 
+@Suppress("NOTHING_TO_INLINE")
 abstract class LogUtil {
 
     companion object {
-        protected const val SUCCESS = "SUCCESS"
-        protected const val FAILURE = "FAILURE"
-        protected const val CLICKED = "CLICKED"
+        const val SUCCESS = "SUCCESS"
+        const val FAILURE = "FAILURE"
+        const val CLICKED = "CLICKED"
 
         fun init() {
             if (BuildConfig.DEBUG) {

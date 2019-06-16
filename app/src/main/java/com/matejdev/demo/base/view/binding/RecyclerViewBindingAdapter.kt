@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
  * Allows to bind [RecyclerView.Adapter] to [RecyclerView] directly in xml.
  * The bound adapter must implement [BindableAdapter]
  */
+@Suppress("UNCHECKED_CAST")
 @BindingAdapter("data")
 fun <T> setRecyclerViewProperties(recyclerView: RecyclerView, data: T) {
     (recyclerView.adapter as? BindableAdapter<T>)?.setData(data)
