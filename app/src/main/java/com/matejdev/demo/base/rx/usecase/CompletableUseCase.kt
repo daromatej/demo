@@ -5,6 +5,9 @@ import com.matejdev.demo.base.rx.observer.EmptyCompletableObserver
 import io.reactivex.Completable
 import io.reactivex.observers.DisposableCompletableObserver
 
+/**
+ * Base [Completable] based use case to perform background task
+ */
 abstract class CompletableUseCase<In>
 constructor(
     rxSchedulersFactory: RxSchedulersFactory

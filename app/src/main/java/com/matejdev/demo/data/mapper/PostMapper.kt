@@ -5,6 +5,9 @@ import com.matejdev.demo.domain.model.PostModel
 import javax.inject.Inject
 import javax.inject.Singleton
 
+/**
+ * Data layer [Post] to domain layer [PostModel] mapper
+ */
 @Singleton
 class PostMapper
 @Inject constructor() {

@@ -9,6 +9,9 @@ import com.matejdev.demo.presentation.viewmodel.state.PostListState
 import io.reactivex.observers.DisposableSingleObserver
 import javax.inject.Inject
 
+/**
+ * ViewModel for [com.matejdev.demo.presentation.view.PostListFragment]
+ */
 class PostListViewModel
 @Inject constructor(
     private val getPostsUseCase: GetPostsUseCase

@@ -9,6 +9,9 @@ import com.matejdev.demo.R
 import com.matejdev.demo.base.view.binding.BindableAdapter
 import com.matejdev.demo.domain.model.CommentModel
 
+/**
+ * [RecyclerView] adapter for [com.matejdev.demo.presentation.view.CommentListFragment]
+ */
 class CommentListAdapter
 constructor(
     private val dataSet: MutableList<CommentModel> = mutableListOf()

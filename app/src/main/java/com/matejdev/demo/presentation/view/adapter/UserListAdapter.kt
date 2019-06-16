@@ -9,6 +9,9 @@ import com.matejdev.demo.R
 import com.matejdev.demo.base.view.binding.BindableAdapter
 import com.matejdev.demo.domain.model.UserModel
 
+/**
+ * [RecyclerView] adapter for [com.matejdev.demo.presentation.view.UserListFragment]
+ */
 class UserListAdapter
 constructor(
     private val dataSet: MutableList<UserModel> = mutableListOf()

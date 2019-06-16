@@ -1,5 +1,8 @@
 package com.matejdev.demo.data.vo
 
+/**
+ * Value Objects fields to json fields mapping
+ */
 interface Vo {
     interface Post {
         companion object {

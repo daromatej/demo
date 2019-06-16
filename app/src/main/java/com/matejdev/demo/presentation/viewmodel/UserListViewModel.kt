@@ -8,6 +8,9 @@ import com.matejdev.demo.presentation.viewmodel.state.UserListState
 import io.reactivex.observers.DisposableSingleObserver
 import javax.inject.Inject
 
+/**
+ * ViewModel for [com.matejdev.demo.presentation.view.UserListFragment]
+ */
 class UserListViewModel
 @Inject constructor(
     private val getUsersUseCase: GetUsersUseCase

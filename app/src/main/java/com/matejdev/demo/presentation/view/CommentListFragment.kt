@@ -21,6 +21,9 @@ import com.matejdev.demo.presentation.viewmodel.state.CommentListState
 import kotlinx.android.synthetic.main.fragment_comment_list.commentListRecycler
 import javax.inject.Inject
 
+/**
+ * Displays a comment list for a provided post
+ */
 class CommentListFragment : ViewModelFragment<CommentListViewModel, FragmentCommentListBinding>(), CommentListAdapter.ItemClickListener {
 
     companion object {

@@ -7,6 +7,9 @@ import com.matejdev.demo.domain.repository.PostRepository
 import io.reactivex.Single
 import javax.inject.Inject
 
+/**
+ * Use case for fetching all posts for given user
+ */
 class GetPostsUseCase
 @Inject constructor(
     rxSchedulersFactory: RxSchedulersFactory,

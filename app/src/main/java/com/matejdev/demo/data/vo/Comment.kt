@@ -4,6 +4,9 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 import com.fasterxml.jackson.annotation.JsonProperty
 import com.matejdev.demo.base.values.Const
 
+/**
+ * Comment value object for API response
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 data class Comment(
     @field:JsonProperty(Vo.Comment.ID) var id: Int = Const.Int.ID_ABSENT,

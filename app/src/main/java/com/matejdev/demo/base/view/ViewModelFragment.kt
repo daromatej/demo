@@ -9,6 +9,9 @@ import androidx.databinding.ViewDataBinding
 import dagger.android.support.DaggerFragment
 import javax.inject.Inject
 
+/**
+ * Base injectable fragment witch ViewModel and DataBinding
+ */
 abstract class ViewModelFragment<VM : BaseViewModel, B : ViewDataBinding> : DaggerFragment() {
 
     @Inject
@@ -31,6 +34,9 @@ abstract class ViewModelFragment<VM : BaseViewModel, B : ViewDataBinding> : Dagg
         }
     }
 
+    /**
+     * Use this function to inflate layout in implementing class while [inflateAndBindModel]
+     */
     protected fun inflateView(inflater: LayoutInflater, container: ViewGroup?): B =
         DataBindingUtil.inflate(inflater, getLayoutResId(), container, false)
 

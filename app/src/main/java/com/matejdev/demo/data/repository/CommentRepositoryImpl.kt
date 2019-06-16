@@ -8,6 +8,9 @@ import com.matejdev.demo.domain.repository.CommentRepository
 import io.reactivex.Single
 import javax.inject.Inject
 
+/**
+ * Repository for fetching comments
+ */
 class CommentRepositoryImpl
 @Inject constructor(
     private val service: CommentService,

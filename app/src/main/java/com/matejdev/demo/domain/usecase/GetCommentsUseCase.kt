@@ -7,6 +7,9 @@ import com.matejdev.demo.domain.repository.CommentRepository
 import io.reactivex.Single
 import javax.inject.Inject
 
+/**
+ * Use case for fetching all comments for given post
+ */
 class GetCommentsUseCase
 @Inject constructor(
     rxSchedulersFactory: RxSchedulersFactory,

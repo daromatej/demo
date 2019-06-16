@@ -3,6 +3,9 @@ package com.matejdev.demo.base.util
 import com.matejdev.demo.BuildConfig
 import timber.log.Timber
 
+/**
+ * Utility for debug logging common actions - like click/success/failure callbacks
+ */
 @Suppress("NOTHING_TO_INLINE")
 abstract class LogUtil {
 

@@ -1,5 +1,8 @@
 package com.matejdev.demo.base.values
 
+/**
+ * Constants to be used across the app
+ */
 interface Const {
 
     interface String {

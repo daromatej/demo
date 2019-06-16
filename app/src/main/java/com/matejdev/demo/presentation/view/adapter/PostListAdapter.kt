@@ -9,6 +9,9 @@ import com.matejdev.demo.R
 import com.matejdev.demo.base.view.binding.BindableAdapter
 import com.matejdev.demo.domain.model.PostModel
 
+/**
+ * [RecyclerView] adapter for [com.matejdev.demo.presentation.view.PostListFragment]
+ */
 class PostListAdapter
 constructor(
     private val dataSet: MutableList<PostModel> = mutableListOf()

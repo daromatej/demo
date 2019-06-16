@@ -5,6 +5,9 @@ import com.matejdev.demo.domain.model.UserModel
 import javax.inject.Inject
 import javax.inject.Singleton
 
+/**
+ * Data layer [User] to domain layer [UserModel] mapper
+ */
 @Singleton
 class UserMapper
 @Inject constructor() {

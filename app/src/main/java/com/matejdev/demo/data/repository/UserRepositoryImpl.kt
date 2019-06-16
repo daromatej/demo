@@ -8,6 +8,9 @@ import com.matejdev.demo.domain.repository.UserRepository
 import io.reactivex.Single
 import javax.inject.Inject
 
+/**
+ * Repository for fetching users
+ */
 class UserRepositoryImpl
 @Inject constructor(
     private val service: UserService,

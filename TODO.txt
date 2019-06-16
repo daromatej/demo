@@ -1,7 +1,0 @@
-- comments
-+ recycler animations
-+ user to posts shared element transition
-
-ARCHITECTURE
-+ gradle - add dependency versioning
-

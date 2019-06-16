@@ -9,6 +9,9 @@ import com.matejdev.demo.presentation.viewmodel.state.CommentListState
 import io.reactivex.observers.DisposableSingleObserver
 import javax.inject.Inject
 
+/**
+ * ViewModel for [com.matejdev.demo.presentation.view.CommentListFragment]
+ */
 class CommentListViewModel
 @Inject constructor(
     private val getCommentsUseCase: GetCommentsUseCase

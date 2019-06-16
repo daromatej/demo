@@ -7,6 +7,9 @@ import com.matejdev.demo.presentation.navigator.BrowserNavigator
 import com.matejdev.demo.presentation.viewmodel.BrowserViewModel
 import javax.inject.Inject
 
+/**
+ * Main activity that handles all the users/posts/comments browsing scenarios
+ */
 class BrowserActivity : BaseActivity<BrowserViewModel>() {
 
     @Inject

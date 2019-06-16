@@ -22,6 +22,9 @@ import com.matejdev.demo.presentation.viewmodel.state.PostListState
 import kotlinx.android.synthetic.main.fragment_post_list.postListRecycler
 import javax.inject.Inject
 
+/**
+ * Displays a post list for a provided user
+ */
 class PostListFragment : ViewModelFragment<PostListViewModel, FragmentPostListBinding>(), PostListAdapter.ItemClickListener {
 
     companion object {

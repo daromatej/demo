@@ -20,6 +20,9 @@ import com.matejdev.demo.presentation.viewmodel.state.UserListState
 import kotlinx.android.synthetic.main.fragment_user_list.userListRecycler
 import javax.inject.Inject
 
+/**
+ * Displays a user list
+ */
 class UserListFragment : ViewModelFragment<UserListViewModel, FragmentUserListBinding>(), UserListAdapter.ItemClickListener {
 
     companion object {

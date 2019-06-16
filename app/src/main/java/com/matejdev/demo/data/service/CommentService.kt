@@ -6,6 +6,9 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
 
+/**
+ * Retrofit comment service configuration
+ */
 interface CommentService {
 
     @GET(Endpoint.COMMENTS)

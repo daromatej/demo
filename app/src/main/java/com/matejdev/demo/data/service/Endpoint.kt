@@ -1,6 +1,8 @@
 package com.matejdev.demo.data.service
 
-
+/**
+ * Endpoint path definitions for services
+ */
 interface Endpoint {
     companion object{
         const val POSTS = "posts"

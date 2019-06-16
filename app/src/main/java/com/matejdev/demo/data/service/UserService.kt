@@ -5,6 +5,9 @@ import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path
 
+/**
+ * Retrofit user service configuration
+ */
 interface UserService {
     @GET(Endpoint.USERS)
     fun getUsers(): Call<List<User>>

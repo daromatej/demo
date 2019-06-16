@@ -4,6 +4,9 @@ import android.os.Bundle
 import dagger.android.support.DaggerAppCompatActivity
 import javax.inject.Inject
 
+/**
+ * Base injectable activity with viewModel
+ */
 abstract class ViewModelActivity<VM : BaseViewModel> : DaggerAppCompatActivity() {
 
     @Inject

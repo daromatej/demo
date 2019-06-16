@@ -13,6 +13,9 @@ import kotlinx.android.synthetic.main.fragment_error.closeButton
 import kotlinx.android.synthetic.main.fragment_error.retryButton
 import javax.inject.Inject
 
+/**
+ * Common error screen with retry and exit actions
+ */
 class ErrorFragment : DaggerFragment() {
 
     companion object {

@@ -7,6 +7,10 @@ import javax.inject.Inject
 import javax.inject.Provider
 import javax.inject.Singleton
 
+/**
+ * ViewModel factory used by dependency injection (Dagger) to
+ * provide particular ViewModel implementation instances
+ */
 @Singleton
 class ViewModelFactory
 @Inject constructor(

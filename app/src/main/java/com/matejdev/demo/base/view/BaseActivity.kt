@@ -5,6 +5,9 @@ import com.matejdev.demo.base.extensions.toVisibleOrGone
 import kotlinx.android.synthetic.main.toolbar.toolbar
 import kotlinx.android.synthetic.main.toolbar.toolbarLoader
 
+/**
+ * Base activity witch common UI logic
+ */
 abstract class BaseActivity<VM : BaseViewModel> : ViewModelActivity<VM>() {
 
     override fun onCreate(savedInstanceState: Bundle?) {

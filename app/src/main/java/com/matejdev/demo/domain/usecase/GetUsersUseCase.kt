@@ -7,6 +7,9 @@ import com.matejdev.demo.domain.repository.UserRepository
 import io.reactivex.Single
 import javax.inject.Inject
 
+/**
+ * Use case for fetching all users
+ */
 class GetUsersUseCase
 @Inject constructor(
     rxSchedulersFactory: RxSchedulersFactory,

@@ -10,6 +10,9 @@ import com.matejdev.demo.presentation.view.PostListFragment
 import com.matejdev.demo.presentation.view.UserListFragment
 import javax.inject.Inject
 
+/**
+ * Navigation scenarios for [BrowserActivity]
+ */
 class BrowserNavigator
 @Inject
 constructor(

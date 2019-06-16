@@ -5,6 +5,9 @@ import io.reactivex.Scheduler
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
 
+/**
+ * Base class for background tasks utilising RxJava
+ */
 abstract class BaseRxUseCase
 constructor(
     private val rxSchedulersFactory: RxSchedulersFactory
@@ -22,5 +25,5 @@ constructor(
 
     protected open fun backgroundThread(): Scheduler = rxSchedulersFactory.ioScheduler()
 
-    protected open fun foregroundThread(): Scheduler = rxSchedulersFactory.uiSheduler()
+    protected open fun foregroundThread(): Scheduler = rxSchedulersFactory.uiScheduler()
 }

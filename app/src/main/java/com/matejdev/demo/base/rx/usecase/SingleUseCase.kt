@@ -2,9 +2,13 @@ package com.matejdev.demo.base.rx.usecase
 
 import com.matejdev.demo.base.rx.RxSchedulersFactory
 import com.matejdev.demo.base.rx.observer.EmptySingleObserver
+import io.reactivex.Completable
 import io.reactivex.Single
 import io.reactivex.observers.DisposableSingleObserver
 
+/**
+ * Base [Single] based use case to perform background task
+ */
 abstract class SingleUseCase<In, Out>
 constructor(
     rxSchedulersFactory: RxSchedulersFactory
