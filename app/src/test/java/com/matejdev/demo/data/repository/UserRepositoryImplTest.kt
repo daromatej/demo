@@ -5,14 +5,13 @@ import com.matejdev.demo.data.service.UserService
 import com.matejdev.demo.data.vo.User
 import com.matejdev.demo.domain.model.UserModel
 import com.nhaarman.mockito_kotlin.whenever
+import io.reactivex.Single
 import org.junit.Rule
 import org.junit.Test
 import org.mockito.InjectMocks
 import org.mockito.Mock
 import org.mockito.junit.MockitoJUnit
 import org.mockito.junit.MockitoRule
-import retrofit2.Call
-import retrofit2.Response
 
 class UserRepositoryImplTest {
 
@@ -31,18 +30,6 @@ class UserRepositoryImplTest {
     lateinit var mockUserMapper: UserMapper
 
     @Mock
-    lateinit var mockUsersCall: Call<List<User>>
-
-    @Mock
-    lateinit var mockUsersResponse: Response<List<User>>
-
-    @Mock
-    lateinit var mockUserCall: Call<User>
-
-    @Mock
-    lateinit var mockUserResponse: Response<User>
-
-    @Mock
     lateinit var mockUserList: List<User>
 
     @Mock
@@ -59,9 +46,7 @@ class UserRepositoryImplTest {
 
     @Test
     fun `Should do a successful API call to getUser`() {
-        whenever(mockUserService.getUser(SOME_ID)).thenReturn(mockUserCall)
-        whenever(mockUserCall.execute()).thenReturn(mockUserResponse)
-        whenever(mockUserResponse.body()).thenReturn(mockUser)
+        whenever(mockUserService.getUser(SOME_ID)).thenReturn(Single.just(mockUser))
         whenever(mockUserMapper.map(mockUser)).thenReturn(mockUserModel)
 
         // when
@@ -75,9 +60,7 @@ class UserRepositoryImplTest {
     @Test
     fun `Should do a successful API call to getUsers`() {
         // given
-        whenever(mockUserService.getUsers()).thenReturn(mockUsersCall)
-        whenever(mockUsersCall.execute()).thenReturn(mockUsersResponse)
-        whenever(mockUsersResponse.body()).thenReturn(mockUserList)
+        whenever(mockUserService.getUsers()).thenReturn(Single.just(mockUserList))
         whenever(mockUserMapper.map(mockUserList)).thenReturn(mockUserModelList)
 
         // when

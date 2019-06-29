@@ -29,40 +29,28 @@ class CommentMapperTest {
     fun `Test comment vales are mapped to commentModel`() {
         // given
         val idTag = 1
-        val comment = stubComment(idTag)
+        val comment = createComment(idTag)
 
         // when
         val commentModel = mapper.map(comment)
 
         // then
-        verifyCommentModel(idTag, commentModel)
+        assertEquals(createCommentModel(idTag), commentModel)
     }
 
     @Test
     fun `Test comment list is mapper to commentModel list`() {
         // given
-        val comments = stubCommentList()
+        val comments = createCommentList()
 
         // when
         val commentModels = mapper.map(comments)
 
         // then
-        verifyCommentModel(commentModels)
+        assertEquals(createCommentModelList(), commentModels)
     }
 
-    private fun verifyCommentModel(idTag: Int, commentModel: CommentModel) {
-        assertEquals("Id should be the same", idTag, commentModel.id)
-        assertEquals("PostId should be the same", idTag, commentModel.postId)
-        assertEquals("Name should be the same", getName(idTag), commentModel.name)
-        assertEquals("Email should be the same", getEmail(idTag), commentModel.email)
-        assertEquals("Body should be the same", getBody(idTag), commentModel.body)
-    }
-
-    private fun verifyCommentModel(commentModels: List<CommentModel>) {
-        for (i in 0..LIST_SIZE) verifyCommentModel(i, commentModels[i])
-    }
-
-    private fun stubComment(idTag: Int) = Comment(
+    private fun createComment(idTag: Int) = Comment(
         id = idTag,
         postId = idTag,
         name = getName(idTag),
@@ -70,8 +58,20 @@ class CommentMapperTest {
         body = getBody(idTag)
     )
 
-    private fun stubCommentList() = mutableListOf<Comment>().apply {
-        for (i in 0..LIST_SIZE) add(stubComment(i))
+    private fun createCommentModel(idTag: Int) = CommentModel(
+        id = idTag,
+        postId = idTag,
+        name = getName(idTag),
+        email = getEmail(idTag),
+        body = getBody(idTag)
+    )
+
+    private fun createCommentList() = mutableListOf<Comment>().apply {
+        for (i in 0..LIST_SIZE) add(createComment(i))
+    }
+
+    private fun createCommentModelList() = mutableListOf<CommentModel>().apply {
+        for (i in 0..LIST_SIZE) add(createCommentModel(i))
     }
 
     private fun getEmail(idTag: Int) = "$EMAIL$idTag"

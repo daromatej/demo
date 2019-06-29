@@ -28,45 +28,45 @@ class UserMapperTest {
     fun `Test user vales are mapped to userModel`() {
         // given
         val idTag = 1
-        val user = stubUser(idTag)
+        val user = createUser(idTag)
 
         // when
         val userModel = mapper.map(user)
 
         // then
-        verifyUserModel(idTag, userModel)
+        assertEquals(createUserModel(idTag), userModel)
     }
 
     @Test
     fun `Test user list is mapper to userModel list`() {
         // given
-        val users = stubUserList()
+        val users = createUserList()
 
         // when
         val userModels = mapper.map(users)
 
         // then
-        verifyUserModel(userModels)
+        assertEquals(createUserModelList(), userModels)
     }
 
-    private fun verifyUserModel(idTag: Int, userModel: UserModel) {
-        assertEquals("Id should be the same", idTag, userModel.id)
-        assertEquals("Name should be the same", getName(idTag), userModel.name)
-        assertEquals("Email should be the same", getEmail(idTag), userModel.email)
-    }
-
-    private fun verifyUserModel(userModels: List<UserModel>) {
-        for (i in 0..LIST_SIZE) verifyUserModel(i, userModels[i])
-    }
-
-    private fun stubUser(idTag: Int) = User(
+    private fun createUser(idTag: Int) = User(
         id = idTag,
         name = getName(idTag),
         email = getEmail(idTag)
     )
 
-    private fun stubUserList() = mutableListOf<User>().apply {
-        for (i in 0..LIST_SIZE) add(stubUser(i))
+    private fun createUserModel(idTag: Int) = UserModel(
+        id = idTag,
+        name = getName(idTag),
+        email = getEmail(idTag)
+    )
+
+    private fun createUserList() = mutableListOf<User>().apply {
+        for (i in 0..LIST_SIZE) add(createUser(i))
+    }
+
+    private fun createUserModelList() = mutableListOf<UserModel>().apply {
+        for (i in 0..LIST_SIZE) add(createUserModel(i))
     }
 
     private fun getName(idTag: Int) = "$NAME$idTag"

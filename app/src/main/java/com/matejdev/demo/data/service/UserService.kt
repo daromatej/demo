@@ -1,7 +1,7 @@
 package com.matejdev.demo.data.service
 
 import com.matejdev.demo.data.vo.User
-import retrofit2.Call
+import io.reactivex.Single
 import retrofit2.http.GET
 import retrofit2.http.Path
 
@@ -10,8 +10,8 @@ import retrofit2.http.Path
  */
 interface UserService {
     @GET(Endpoint.USERS)
-    fun getUsers(): Call<List<User>>
+    fun getUsers(): Single<List<User>>
 
     @GET(Endpoint.USER)
-    fun getUser(@Path("id") id: Int): Call<User>
+    fun getUser(@Path("id") id: Int): Single<User>
 }

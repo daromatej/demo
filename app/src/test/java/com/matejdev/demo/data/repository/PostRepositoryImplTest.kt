@@ -5,14 +5,13 @@ import com.matejdev.demo.data.service.PostService
 import com.matejdev.demo.data.vo.Post
 import com.matejdev.demo.domain.model.PostModel
 import com.nhaarman.mockito_kotlin.whenever
+import io.reactivex.Single
 import org.junit.Rule
 import org.junit.Test
 import org.mockito.InjectMocks
 import org.mockito.Mock
 import org.mockito.junit.MockitoJUnit
 import org.mockito.junit.MockitoRule
-import retrofit2.Call
-import retrofit2.Response
 
 class PostRepositoryImplTest {
 
@@ -29,18 +28,6 @@ class PostRepositoryImplTest {
 
     @Mock
     lateinit var mockPostMapper: PostMapper
-
-    @Mock
-    lateinit var mockPostsCall: Call<List<Post>>
-
-    @Mock
-    lateinit var mockPostsResponse: Response<List<Post>>
-
-    @Mock
-    lateinit var mockPostCall: Call<Post>
-
-    @Mock
-    lateinit var mockPostResponse: Response<Post>
 
     @Mock
     lateinit var mockPostList: List<Post>
@@ -60,9 +47,7 @@ class PostRepositoryImplTest {
     @Test
     fun `Should do a successful API call to getPostsForUser`() {
         // given
-        whenever(mockPostService.getPostsForUser(SOME_ID)).thenReturn(mockPostsCall)
-        whenever(mockPostsCall.execute()).thenReturn(mockPostsResponse)
-        whenever(mockPostsResponse.body()).thenReturn(mockPostList)
+        whenever(mockPostService.getPostsForUser(SOME_ID)).thenReturn(Single.just(mockPostList))
         whenever(mockPostMapper.map(mockPostList)).thenReturn(mockPostModelList)
 
         // when
@@ -75,9 +60,7 @@ class PostRepositoryImplTest {
 
     @Test
     fun `Should do a successful API call to getPost`() {
-        whenever(mockPostService.getPost(SOME_ID)).thenReturn(mockPostCall)
-        whenever(mockPostCall.execute()).thenReturn(mockPostResponse)
-        whenever(mockPostResponse.body()).thenReturn(mockPost)
+        whenever(mockPostService.getPost(SOME_ID)).thenReturn(Single.just(mockPost))
         whenever(mockPostMapper.map(mockPost)).thenReturn(mockPostModel)
 
         // when
@@ -91,9 +74,7 @@ class PostRepositoryImplTest {
     @Test
     fun `Should do a successful API call to getPosts`() {
         // given
-        whenever(mockPostService.getPosts()).thenReturn(mockPostsCall)
-        whenever(mockPostsCall.execute()).thenReturn(mockPostsResponse)
-        whenever(mockPostsResponse.body()).thenReturn(mockPostList)
+        whenever(mockPostService.getPosts()).thenReturn(Single.just(mockPostList))
         whenever(mockPostMapper.map(mockPostList)).thenReturn(mockPostModelList)
 
         // when

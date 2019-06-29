@@ -28,47 +28,47 @@ class PostMapperTest {
     fun `Test post vales are mapped to postModel`() {
         // given
         val idTag = 1
-        val post = stubPost(idTag)
+        val post = createPost(idTag)
 
         // when
         val postModel = mapper.map(post)
 
         // then
-        verifyPostModel(idTag, postModel)
+        assertEquals(createPostModel(idTag), postModel)
     }
 
     @Test
     fun `Test post list is mapper to postModel list`() {
         // given
-        val posts = stubPostList()
+        val posts = createPostList()
 
         // when
         val postModels = mapper.map(posts)
 
         // then
-        verifyPostModel(postModels)
+        assertEquals(createPostModelList(), postModels)
     }
 
-    private fun verifyPostModel(idTag: Int, postModel: PostModel) {
-        assertEquals("Id should be the same", idTag, postModel.id)
-        assertEquals("UserId should be the same", idTag, postModel.userId)
-        assertEquals("Title should be the same", getTitle(idTag), postModel.title)
-        assertEquals("Body should be the same", getBody(idTag), postModel.body)
-    }
-
-    private fun verifyPostModel(postModels: List<PostModel>) {
-        for (i in 0..LIST_SIZE) verifyPostModel(i, postModels[i])
-    }
-
-    private fun stubPost(idTag: Int) = Post(
+    private fun createPost(idTag: Int) = Post(
         id = idTag,
         userId = idTag,
         title = getTitle(idTag),
         body = getBody(idTag)
     )
 
-    private fun stubPostList() = mutableListOf<Post>().apply {
-        for (i in 0..LIST_SIZE) add(stubPost(i))
+    private fun createPostModel(idTag: Int) = PostModel(
+        id = idTag,
+        userId = idTag,
+        title = getTitle(idTag),
+        body = getBody(idTag)
+    )
+
+    private fun createPostList() = mutableListOf<Post>().apply {
+        for (i in 0..LIST_SIZE) add(createPost(i))
+    }
+
+    private fun createPostModelList() = mutableListOf<PostModel>().apply {
+        for (i in 0..LIST_SIZE) add(createPostModel(i))
     }
 
     private fun getTitle(idTag: Int) = "$TITLE$idTag"

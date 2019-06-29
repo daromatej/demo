@@ -8,6 +8,7 @@ import com.matejdev.demo.data.service.UserService
 import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
@@ -19,6 +20,7 @@ class ServiceModule {
     fun provideRetrofit(resources: Resources): Retrofit = Retrofit.Builder()
         .baseUrl(resources.getString(R.string.service_url))
         .addConverterFactory(GsonConverterFactory.create())
+        .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
         .build()
 
     @Provides

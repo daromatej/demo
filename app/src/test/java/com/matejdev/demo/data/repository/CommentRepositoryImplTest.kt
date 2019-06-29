@@ -5,14 +5,13 @@ import com.matejdev.demo.data.service.CommentService
 import com.matejdev.demo.data.vo.Comment
 import com.matejdev.demo.domain.model.CommentModel
 import com.nhaarman.mockito_kotlin.whenever
+import io.reactivex.Single
 import org.junit.Rule
 import org.junit.Test
 import org.mockito.InjectMocks
 import org.mockito.Mock
 import org.mockito.junit.MockitoJUnit
 import org.mockito.junit.MockitoRule
-import retrofit2.Call
-import retrofit2.Response
 
 class CommentRepositoryImplTest {
 
@@ -29,18 +28,6 @@ class CommentRepositoryImplTest {
 
     @Mock
     lateinit var mockCommentMapper: CommentMapper
-
-    @Mock
-    lateinit var mockCommentsCall: Call<List<Comment>>
-
-    @Mock
-    lateinit var mockCommentsResponse: Response<List<Comment>>
-
-    @Mock
-    lateinit var mockCommentCall: Call<Comment>
-
-    @Mock
-    lateinit var mockCommentResponse: Response<Comment>
 
     @Mock
     lateinit var mockCommentList: List<Comment>
@@ -60,9 +47,7 @@ class CommentRepositoryImplTest {
     @Test
     fun `Should do a successful API call to getCommentsForPost`() {
         // given
-        whenever(mockCommentService.getCommentsForPost(SOME_ID)).thenReturn(mockCommentsCall)
-        whenever(mockCommentsCall.execute()).thenReturn(mockCommentsResponse)
-        whenever(mockCommentsResponse.body()).thenReturn(mockCommentList)
+        whenever(mockCommentService.getCommentsForPost(SOME_ID)).thenReturn(Single.just(mockCommentList))
         whenever(mockCommentMapper.map(mockCommentList)).thenReturn(mockCommentModelList)
 
         // when
@@ -75,9 +60,7 @@ class CommentRepositoryImplTest {
 
     @Test
     fun `Should do a successful API call to getComment`() {
-        whenever(mockCommentService.getComment(SOME_ID)).thenReturn(mockCommentCall)
-        whenever(mockCommentCall.execute()).thenReturn(mockCommentResponse)
-        whenever(mockCommentResponse.body()).thenReturn(mockComment)
+        whenever(mockCommentService.getComment(SOME_ID)).thenReturn(Single.just(mockComment))
         whenever(mockCommentMapper.map(mockComment)).thenReturn(mockCommentModel)
 
         // when
@@ -91,9 +74,7 @@ class CommentRepositoryImplTest {
     @Test
     fun `Should do a successful API call to getComments`() {
         // given
-        whenever(mockCommentService.getComments()).thenReturn(mockCommentsCall)
-        whenever(mockCommentsCall.execute()).thenReturn(mockCommentsResponse)
-        whenever(mockCommentsResponse.body()).thenReturn(mockCommentList)
+        whenever(mockCommentService.getComments()).thenReturn(Single.just(mockCommentList))
         whenever(mockCommentMapper.map(mockCommentList)).thenReturn(mockCommentModelList)
 
         // when
