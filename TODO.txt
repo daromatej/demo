@@ -1,0 +1,5 @@
+
+- refactor LiveData actions into states (full screen state)
+- connection checker (immediate error when no connection)
+- new loader
+- corutines

@@ -6,6 +6,8 @@ apply plugin: 'kotlin-android-extensions'
 
 apply plugin: 'kotlin-kapt'
 
+apply plugin: "androidx.navigation.safeargs.kotlin"
+
 android {
     compileSdkVersion build_versions.target_sdk
     buildToolsVersion build_versions.build_tools
@@ -40,6 +42,9 @@ dependencies {
     implementation deps.lifecycle.viewmodel
     implementation deps.lifecycle.extensions
 
+    implementation deps.navigation.fragment
+    implementation deps.navigation.ui
+
     implementation deps.retrofit.runtime
     implementation deps.retrofit.gson
     implementation deps.retrofit.rx_adapter
@@ -64,5 +69,4 @@ dependencies {
     androidTestImplementation deps.android_runner
     androidTestImplementation deps.espresso.core
     androidTestImplementation deps.mockito.android
-
 }

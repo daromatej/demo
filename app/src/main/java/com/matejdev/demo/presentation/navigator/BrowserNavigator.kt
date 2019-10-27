@@ -1,13 +1,12 @@
 package com.matejdev.demo.presentation.navigator
 
+import androidx.navigation.findNavController
 import com.matejdev.demo.R
 import com.matejdev.demo.domain.model.PostModel
 import com.matejdev.demo.domain.model.UserModel
 import com.matejdev.demo.presentation.view.BrowserActivity
-import com.matejdev.demo.presentation.view.CommentListFragment
-import com.matejdev.demo.presentation.view.ErrorFragment
-import com.matejdev.demo.presentation.view.PostListFragment
-import com.matejdev.demo.presentation.view.UserListFragment
+import com.matejdev.demo.presentation.view.PostListFragmentDirections
+import com.matejdev.demo.presentation.view.UserListFragmentDirections
 import javax.inject.Inject
 
 /**
@@ -19,32 +18,17 @@ constructor(
     private val activity: BrowserActivity
 ) {
 
-    fun showUsers() {
-        activity.supportFragmentManager.beginTransaction()
-            .replace(R.id.fragmentContainer, UserListFragment.newInstance())
-            .commit()
-    }
+    fun showPosts(user: UserModel) = navController().navigate(
+        UserListFragmentDirections.actionUserListFragmentToPostListFragment(user)
+    )
 
-    fun showPosts(user: UserModel) {
-        activity.supportFragmentManager.beginTransaction()
-            .replace(R.id.fragmentContainer, PostListFragment.newInstance(user))
-            .addToBackStack(null)
-            .commit()
-    }
+    fun showComments(post: PostModel) = navController().navigate(
+        PostListFragmentDirections.actionPostListFragmentToCommentListFragment(post)
+    )
 
-    fun showComments(post: PostModel) {
-        activity.supportFragmentManager.beginTransaction()
-            .replace(R.id.fragmentContainer, CommentListFragment.newInstance(post))
-            .addToBackStack(null)
-            .commit()
-    }
+    fun showError() = navController().navigate(R.id.errorFragment)
 
-    fun showError() {
-        activity.supportFragmentManager.beginTransaction()
-            .replace(R.id.fragmentContainer, ErrorFragment.newInstance())
-            .addToBackStack(null)
-            .commit()
-    }
+    fun goBack() = navController().popBackStack()
 
-    fun goBack() = activity.supportFragmentManager.popBackStackImmediate()
+    private fun navController() = activity.findNavController(R.id.navHostFragment)
 }

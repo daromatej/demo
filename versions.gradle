@@ -6,7 +6,8 @@ versions.support = "1.0.2"
 versions.core_ktx = "1.0.2"
 versions.constraint_layout = "2.0.0-beta2"
 versions.recycler_view = "1.0.0"
-versions.lifecycle = "2.2.0-alpha01"
+versions.lifecycle = "2.2.0-alpha05"
+versions.navigation = "2.1.0"
 versions.arch_core = "2.0.1"
 versions.retrofit = "2.5.0"
 versions.dagger = "2.22.1"
@@ -35,6 +36,12 @@ def lifecycle = [:]
 lifecycle.viewmodel = "androidx.lifecycle:lifecycle-viewmodel:$versions.lifecycle"
 lifecycle.extensions = "androidx.lifecycle:lifecycle-extensions:$versions.lifecycle"
 deps.lifecycle = lifecycle
+
+def navigation = [:]
+navigation.fragment = "androidx.navigation:navigation-fragment-ktx:$versions.navigation"
+navigation.ui = "androidx.navigation:navigation-ui-ktx:$versions.navigation"
+navigation.save_args_plugin= "androidx.navigation:navigation-safe-args-gradle-plugin:$versions.navigation"
+deps.navigation = navigation
 
 def arch_core = [:]
 arch_core.testing = "androidx.arch.core:core-testing:$versions.arch_core"

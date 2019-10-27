@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.matejdev.demo.R
@@ -28,7 +29,7 @@ import javax.inject.Inject
 class PostListFragment : ViewModelFragment<PostListViewModel, FragmentPostListBinding>(), PostListAdapter.ItemClickListener {
 
     companion object {
-        private const val USER_KEY = "userKey"
+        private const val USER_KEY = "UserModel"
 
         fun newInstance(user: UserModel) = PostListFragment().apply {
             val args = Bundle()

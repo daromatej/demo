@@ -27,7 +27,7 @@ import javax.inject.Inject
 class CommentListFragment : ViewModelFragment<CommentListViewModel, FragmentCommentListBinding>(), CommentListAdapter.ItemClickListener {
 
     companion object {
-        private const val POST_KEY = "postKey"
+        private const val POST_KEY = "PostModel"
 
         fun newInstance(post: PostModel) = CommentListFragment().apply {
             val args = Bundle()

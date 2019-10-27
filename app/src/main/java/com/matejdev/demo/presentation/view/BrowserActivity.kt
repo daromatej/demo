@@ -1,6 +1,5 @@
 package com.matejdev.demo.presentation.view
 
-import android.os.Bundle
 import com.matejdev.demo.R
 import com.matejdev.demo.base.view.BaseActivity
 import com.matejdev.demo.presentation.navigator.BrowserNavigator
@@ -18,11 +17,6 @@ class BrowserActivity : BaseActivity<BrowserViewModel>() {
     override fun getLayoutResId() = R.layout.activity_browser
 
     override fun getViewModelClass() = BrowserViewModel::class.java
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        navigator.showUsers()
-    }
 
     override fun onNavigateUp() = navigator.goBack()
 }
