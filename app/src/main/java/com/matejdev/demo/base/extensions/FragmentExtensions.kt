@@ -23,4 +23,4 @@ inline fun <reified T : Any> Fragment.argNotNull(key: String, default: T? = null
 /**
  * Helper to retrieve [BaseActivity] from any fragment
  */
-fun Fragment.baseActivity() = this.activity as BaseActivity<*>
+fun Fragment.baseActivity() = this.activity as BaseActivity<*, *>

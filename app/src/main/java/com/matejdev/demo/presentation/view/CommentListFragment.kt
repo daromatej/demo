@@ -10,7 +10,7 @@ import com.matejdev.demo.R
 import com.matejdev.demo.base.extensions.argNotNull
 import com.matejdev.demo.base.extensions.baseActivity
 import com.matejdev.demo.base.util.LogUtil
-import com.matejdev.demo.base.view.ViewModelFragment
+import com.matejdev.demo.base.view.ViewModelBoundFragment
 import com.matejdev.demo.databinding.FragmentCommentListBinding
 import com.matejdev.demo.domain.model.CommentModel
 import com.matejdev.demo.domain.model.PostModel
@@ -24,7 +24,7 @@ import javax.inject.Inject
 /**
  * Displays a comment list for a provided post
  */
-class CommentListFragment : ViewModelFragment<CommentListViewModel, FragmentCommentListBinding>(), CommentListAdapter.ItemClickListener {
+class CommentListFragment : ViewModelBoundFragment<CommentListViewModel, FragmentCommentListBinding>(), CommentListAdapter.ItemClickListener {
 
     companion object {
         private const val POST_KEY = "PostModel"

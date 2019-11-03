@@ -5,13 +5,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.matejdev.demo.R
 import com.matejdev.demo.base.extensions.baseActivity
 import com.matejdev.demo.base.util.LogUtil
-import com.matejdev.demo.base.view.ViewModelFragment
+import com.matejdev.demo.base.view.ViewModelBoundFragment
 import com.matejdev.demo.databinding.FragmentUserListBinding
 import com.matejdev.demo.domain.model.UserModel
 import com.matejdev.demo.presentation.navigator.BrowserNavigator
@@ -24,7 +23,7 @@ import javax.inject.Inject
 /**
  * Displays a user list
  */
-class UserListFragment : ViewModelFragment<UserListViewModel, FragmentUserListBinding>(), UserListAdapter.ItemClickListener {
+class UserListFragment : ViewModelBoundFragment<UserListViewModel, FragmentUserListBinding>(), UserListAdapter.ItemClickListener {
 
     companion object {
         fun newInstance() = UserListFragment().apply {

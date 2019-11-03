@@ -12,7 +12,7 @@ import javax.inject.Inject
 /**
  * Base injectable fragment witch ViewModel and DataBinding
  */
-abstract class ViewModelFragment<VM : BaseViewModel, B : ViewDataBinding> : DaggerFragment() {
+abstract class ViewModelBoundFragment<VM : BaseViewModel, B : ViewDataBinding> : DaggerFragment() {
 
     @Inject
     lateinit var viewModelFactory: ViewModelFactory

@@ -5,14 +5,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.matejdev.demo.R
 import com.matejdev.demo.base.extensions.argNotNull
 import com.matejdev.demo.base.extensions.baseActivity
 import com.matejdev.demo.base.util.LogUtil
-import com.matejdev.demo.base.view.ViewModelFragment
+import com.matejdev.demo.base.view.ViewModelBoundFragment
 import com.matejdev.demo.databinding.FragmentPostListBinding
 import com.matejdev.demo.domain.model.PostModel
 import com.matejdev.demo.domain.model.UserModel
@@ -26,7 +25,7 @@ import javax.inject.Inject
 /**
  * Displays a post list for a provided user
  */
-class PostListFragment : ViewModelFragment<PostListViewModel, FragmentPostListBinding>(), PostListAdapter.ItemClickListener {
+class PostListFragment : ViewModelBoundFragment<PostListViewModel, FragmentPostListBinding>(), PostListAdapter.ItemClickListener {
 
     companion object {
         private const val USER_KEY = "UserModel"
