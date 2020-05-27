@@ -13,7 +13,7 @@ class RxSchedulersFactory
 
     fun ioScheduler(): Scheduler = Schedulers.io()
 
-    fun computationSheduler(): Scheduler = Schedulers.computation()
+    fun computationScheduler(): Scheduler = Schedulers.computation()
 
     fun uiScheduler(): Scheduler = AndroidSchedulers.mainThread()
 }

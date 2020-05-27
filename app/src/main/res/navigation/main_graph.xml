@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/welcomeFragment">
+
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="com.matejdev.demo.a.presentation.view.WelcomeFragment"
+        android:label="WelcomeFragment" >
+        <action
+            android:id="@+id/action_welcome_to_todoList"
+            app:destination="@+id/todoListFragment" />
+        <action
+            android:id="@+id/action_welcome_to_todoCount"
+            app:destination="@+id/todoCountFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/todoListFragment"
+        android:name="com.matejdev.demo.a.presentation.view.ToDoListFragment"
+        android:label="ToDoListFragment" >
+        <action
+            android:id="@+id/action_todoList_to_todo"
+            app:destination="@+id/todoFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/todoCountFragment"
+        android:name="com.matejdev.demo.a.presentation.view.ToDoCountFragment"
+        android:label="ToDoCountFragment" >
+    </fragment>
+
+    <fragment
+        android:id="@+id/todoFragment"
+        android:name="com.matejdev.demo.a.presentation.view.ToDoFragment"
+        android:label="ToDoFragment" >
+        <argument
+            android:name="ToDoModel"
+            app:argType="com.matejdev.demo.a.domain.model.ToDoModel" />
+    </fragment>
+</navigation>

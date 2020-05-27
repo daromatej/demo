@@ -1,3 +1,4 @@
 - connection checker (immediate error when no connection)
+register receiver that pushes the connection state to some POJO singleton. Inject the singleton into repository
 - new loader
 - corutines
